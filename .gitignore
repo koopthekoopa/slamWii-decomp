@@ -1,19 +1,46 @@
-.cache/
-.private/*
-.vscode/*
-__pycache__/*
-orig/*
+# binaries
 asm/*
 build/*
 lib/*
 obj/*
 *.a
-tools/__pycache__/*
-tools/ar/__pycache__/*
+
+# build
 *.ninja*
 compile_commands.json
 objdiff.json
-configureold.py
-*.lnk
-*.zip
+build.ninja
+.ninja_deps
+.ninja_log
+.ninja_lock
+
+# uh
 *.bat
+*.lnk
+*.exe
+*.a
+*.elf
+*.dol
+*.map
+
+# cache
+.cache/
+__pycache__/
+tools/__pycache__/
+tools/ar/__pycache__/
+
+# logs
+*.log
+
+# koop
+.private/
+
+# orig Disc images
+*.iso
+*.wbfs
+*.rvz
+*.wia
+*.cios
+*.nfs
+*.gcz
+*.tgc
