@@ -282,6 +282,13 @@ config.libs = [
 
             Object(NonMatching, "RVL_SDK/HIO2/hio2.c"),
 
+            Object(NonMatching, "RVL_SDK/MTX/mtx.c"),
+            Object(NonMatching, "RVL_SDK/MTX/mtx44.c"),
+            Object(NonMatching, "RVL_SDK/MTX/mtx44vec.c"),
+            Object(NonMatching, "RVL_SDK/MTX/mtxstack.c"),
+            Object(NonMatching, "RVL_SDK/MTX/mtxvec.c"),
+            Object(NonMatching, "RVL_SDK/MTX/vec.c"),
+
             Object(NonMatching, "RVL_SDK/RSO/RSOLink.c"),
 
             Object(NonMatching, "RVL_SDK/WBC/wbc.c"),
@@ -310,6 +317,15 @@ config.libs = [
             Object(Matching,   "RVLFaceLib/RFL_Format.c"),
         ],
     },
+    {
+        "lib": "MSL",
+        "mw_version": "Wii/1.0",
+        "cflags": CFlags(cflags_RVLSDK),
+        "progress_category": "msl",
+        "objects": [
+            
+        ],
+    },
 ]
 
 
@@ -336,6 +352,7 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 config.progress_categories = [
     ProgressCategory("sdk", "RVL_SDK"),
     ProgressCategory("rfl", "RVLFaceLibrary"),
+    ProgressCategory("msl", "Metrowerks Standard Library"),
 ]
 config.progress_each_module = args.verbose
 # Optional extra arguments to `objdiff-cli report generate`

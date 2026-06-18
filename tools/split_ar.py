@@ -170,7 +170,7 @@ def main() -> None:
                 duplicate = 1
                 for ar_entry in ar_input_file:
                     # If the name and duplicate matches, we got one!
-                    if ar_entry.name == ar_file_obj_name and duplicate == ar_file_duplicate:
+                    if Path(ar_entry.name).name == ar_file_obj_name and duplicate == ar_file_duplicate:
                         # Extract object
                         ar_file_output_fullpath.parent.mkdir(parents=True, exist_ok=True)
                         write_file(ar_file_output_fullpath, ar_input_file.open(ar_entry, 'rb').read())
