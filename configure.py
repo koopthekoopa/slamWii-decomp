@@ -296,7 +296,7 @@ def SLAM(objects: List[Object]) -> Dict[str, Any]:
         "lib": "slamWii",
         "mw_version": config.linker_version,
         "cflags": cflags_base,
-        # "progress_category": "main_libs",
+        "progress_category": "slam",
         "objects": objects,
     }
 
