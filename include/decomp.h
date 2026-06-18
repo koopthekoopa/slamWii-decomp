@@ -1,0 +1,8 @@
+#ifndef GLOBAL_HEADERS_DECOMP_H
+#define GLOBAL_HEADERS_DECOMP_H
+
+#include <decomp/ide.h>
+#include <decomp/types.h>
+#include <decomp/utils.h>
+
+#endif  // GLOBAL_HEADERS_DECOMP_H

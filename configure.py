@@ -204,8 +204,7 @@ cflags_base_all = [
     "-nosyspath",
     "-cwd include",
     "-i include",
-    "-i include/context_sdk",
-    "-i include/context_std",
+    "-i include/stdlib",
     "-i include/RVLFaceLib",
     "-enc SJIS",
     "-DTARGET_RVL",
@@ -273,7 +272,11 @@ cflags_msl = [
 ]
 
 config.linker_version = "Wii/1.0"
-sdk_compiler = "Wii/1.0"
+
+if config.version.startswith("2010"):
+    sdk_compiler = "Wii/1.0"
+else:
+    sdk_compiler = "GC/3.0a5.2"
 
 Matching = True                   # Object matches and should be linked
 NonMatching = False               # Object does not match and should not be linked
@@ -761,7 +764,7 @@ config.libs = [
     ]),
 
     RVLSDKLib("arc", [
-        Object(NonMatching, "RVL_SDK/arc/arc.c")
+        Object(Matching,    "RVL_SDK/arc/arc.c")
     ]),
 
     RVLSDKLib("axart", [
