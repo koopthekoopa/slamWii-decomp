@@ -208,8 +208,7 @@ cflags_base_all = [
     "-i include/RVLFaceLib",
     "-enc SJIS",
     "-DTARGET_RVL",
-    "-DSDK_" + config.version[:-4],
-    "-DSDK_VERSION=" + config.version[:-4],
+    "-DSLAM_" + config.version[:-4],
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"'
 ]
@@ -1053,9 +1052,9 @@ config.libs = [
     ]),
 
     RVLSDKLib("midi", [
-        Object(NonMatching, "RVL_SDK/midi/MIDI.c"),
-        Object(NonMatching, "RVL_SDK/midi/MIDIRead.c"),
-        Object(NonMatching, "RVL_SDK/midi/MIDIXfer.c")
+        Object(Matching,    "RVL_SDK/midi/MIDI.c"),
+        Object(Matching,    "RVL_SDK/midi/MIDIRead.c"),
+        Object(Matching,    "RVL_SDK/midi/MIDIXfer.c")
     ]),
 
     RVLSDKLib("mix", [
@@ -1182,7 +1181,7 @@ config.libs = [
     ]),
 
     RVLSDKLib("wenc", [
-        Object(NonMatching, "RVL_SDK/wenc/wenc.c")
+        Object(Matching,    "RVL_SDK/wenc/wenc.c", mw_version = "GC/3.0a5.2")
     ]),
 
     RVLSDKLib("wpad", [
