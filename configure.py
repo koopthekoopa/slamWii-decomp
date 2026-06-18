@@ -1013,7 +1013,7 @@ config.libs = [
     ]),
 
     RVLSDKLib("hio2", [
-        Object(NonMatching, "RVL_SDK/hio2/hio2.c", mw_version="GC/3.0a5.2")
+        Object(MatchingDbg, "RVL_SDK/hio2/hio2.c", mw_version="GC/3.0a5.2")
     ]),
 
     RVLSDKLib("ipc", [
